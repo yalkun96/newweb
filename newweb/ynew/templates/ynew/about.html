@@ -1,0 +1,16 @@
+{% extends 'ynew/main.html' %}
+{% load static %}
+
+{% block info %}
+    <div class="about">
+
+        <img class="me-two" src="{% static '/ynew/images/me.JPG' %}">
+        <p class="cont">Yalkun Mametov</p>
+        <p class="cont">{{ task.0 }}</p>
+        <p class="cont">age: {{ task.4 }}</p>
+        <p class="cont">languages I speak: {{ task.5 }}</p>
+
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'ynew/main.html' %}
+{% load static %}
+{% load embed_video_tags %}
+
+
+{% block info %}
+
+
+    <div class="mhome">
+        <div class="tbox">
+            <p class="home">YALKUN</p>
+            <p class="home-mametov">MAMETOV</p>
+            <p class="home">WEB DEVELOPER</p>
+            <div class="click">
+                <a class="click-contact" href="{% url "contact" %}">contact</a>
+                <a class="click-portfolio" href="{% url 'portfolio' %}">portfolio</a>
+            </div>
+        </div>
+
+        <div class="mcode">
+            <img class="code" src="{% static "ynew/images/4380747-removebg.png" %}">
+        </div>
+
+    </div>
+
+
+
+
+
+
+{% endblock %}

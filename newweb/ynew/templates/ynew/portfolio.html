@@ -1,0 +1,11 @@
+{% extends 'ynew/main.html' %}
+{% load embed_video_tags %}
+{% load static %}
+
+
+
+{% block info %}
+    {% for i in video %}
+        {% video i.video %}
+    {% endfor %}
+{% endblock %}

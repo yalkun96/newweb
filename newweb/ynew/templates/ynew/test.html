@@ -1,0 +1,42 @@
+{% extends 'ynew/main.html' %}
+{% load static %}
+
+
+
+
+
+
+{% block info %}
+    <div class="main-text">
+        <p>My name is Yalkun and I am a Web Developer</p>
+    </div>
+    <div class="photo">
+            <video class="homepage-video" controls><source src="{{ video.home }}">
+            </video>
+
+    </div>
+
+<p class="pre-box">I can create for you:</p>
+<div class="index">
+
+        <div class="firstpagebox">
+            <div class="firstpagebox1">
+                <div class="box box1"><img class="fristpageicon" src="{% static 'ynew/images/landing.png' %}"><p class="undertext undertext1">Ladning</p></div>
+                <p class="boxtext1">{{ tasks.1 }}</p>
+            </div>
+            <div class="firstpagebox2">
+                <div class="box box2"><img class="fristpageicon" src="{% static 'ynew/images/landing.png' %}"><p class="undertext undertext2">Business Website</p></div>
+                <p class="boxtext2">{{ tasks.2 }}</p>
+            </div>
+
+            <div class="firstpagebox3">
+                <div class="box box3"><img class="fristpageicon" src="{% static 'ynew/images/shopping.png' %}"><p class="undertext undertext3">E-shop</p></div>
+                <p class="boxtext3">{{ tasks.3 }}</p>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+

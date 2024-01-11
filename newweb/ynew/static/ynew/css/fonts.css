@@ -1,0 +1,44 @@
+
+.home {
+    font-size: 35px;
+
+}
+
+.home-mametov {
+    font-size: 55px;
+}
+.click-contact {
+    color: black;
+    border: solid;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+}
+
+.click-portfolio {
+    color: black;
+    border: solid;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+}
+.click-portfolio:hover {
+    opacity: 30%;
+    transform: translateY(1px);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
+              0 1px 1px 0 rgba(0,0,0,0.09);
+}
+.click-contact:hover {
+    opacity: 30%;
+    transform: translateY(1px);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
+              0 1px 1px 0 rgba(0,0,0,0.09);
+}
+.cont {
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    margin-left: 10%;
+}

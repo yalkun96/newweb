@@ -1,0 +1,107 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'ynew/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'ynew/css/icons.css' %}">
+    <link rel="stylesheet" href="{% static 'ynew/css/box.css' %}">
+    <link rel="stylesheet" href="{% static 'ynew/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'ynew/css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'ynew/css/fonts.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Title</title>
+
+</head>
+<body>
+<div class="bodycontainer">
+    <form class="languageform" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}">
+        <select class="select" name="language">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                    {{ language.name_local }} ({{ language.code }})
+                </option>
+            {% endfor %}
+            <input class="language" type="submit" value="Go">
+        </select>
+    </form>
+
+    <div class="container">
+
+    <div class="magic-list">
+        <a href="{% url 'home' %}" class="magic-list_item">
+            <div class="magic-list_header">HOME</div>
+            <div class="cursor">
+                <div class="cursor_image" style="background-image: url({% static 'ynew/images/homecode.jpg' %});"></div>
+            </div>
+        </a>
+         <a href="{% url 'portfolio' %}" class="magic-list_item">
+            <div class="magic-list_header">Works</div>
+            <div class="cursor">
+                <div class="cursor_image" style="background-image: url({% static 'ynew/images/65866.jpg' %});"></div>
+            </div>
+        </a>
+        <a href="{% url 'about' %}" class="magic-list_item">
+            <div class="magic-list_header">ABOUT</div>
+            <div class="cursor">
+                <div class="cursor_image" style="background-image: url({% static 'ynew/images/camera.jpg' %}); background-size: 660px 500px "></div>
+            </div>
+        </a>
+        <a href="{% url 'contact' %}" class="magic-list_item">
+            <div class="magic-list_header">CONTACT</div>
+            <div class="cursor">
+                <div class="cursor_image" style="background-image: url({% static 'ynew/images/phone.jpg' %});
+                                                "></div>
+            </div>
+        </a>
+    </div>
+        <div class="icons">
+        <ul>
+            <li style="--i:#0f94d4;--j:#d40fd0;">
+                <a class="icon"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a class="title" href="https://www.instagram.com/yalkunisme/" target="_blank">Instagram</a>
+            </li>
+            <li style="--i:#0f94d4;--j:#d40fd0;">
+                <a class="icon" ><ion-icon name="logo-facebook">Instagram</ion-icon></a>
+                <a class="title" href="https://www.facebook.com/yalkun.mv" target="_blank">Facebook</a>
+            </li>
+            <li style="--i:#0f94d4;--j:#d40fd0;">
+                <a class="icon"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                <a class="title" href="https://wa.me/+420774629494" target="_blank">WhatsApp</a>
+            </li>
+        </ul>
+        </div>
+
+    {% block info %}
+
+    {% endblock %}
+
+</div>
+</div>
+</body>
+<script>
+    function myFunction() {
+  document.getElementById("myCheck").click();
+}
+</script>
+
+<script>document.querySelectorAll('.cursor').forEach(node=> {
+    document.addEventListener('mousemove', e => {
+        node.style.cssText = `--move-x: ${e.clientX}px; --move-y: ${e.clientY}px;`
+    })
+})</script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>

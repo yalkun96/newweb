@@ -1,0 +1,85 @@
+.about {
+    width: 1200px;
+    height: 800px;
+    position: relative;
+    margin-left: 100px;
+}
+.myphoto {
+    color: black;
+    font-size: 40px;
+    margin-right: 100px;
+    margin-left: 100px;
+    text-align: justify;
+}
+.me-two {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin-top: 0;
+    margin-right: 10px;
+    margin-left: 30px;
+    border: 5px solid #555;
+    border-radius: 50px;
+    float: right;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 1000px) {
+
+
+
+}
+/* IPad */
+@media screen and (max-width: 900px) {
+    .box {
+        width: 170px;
+        height: 170px;
+    }
+
+
+
+}
+
+
+/* IPad Mini */
+@media screen and (max-width: 769px) {
+}
+
+
+@media (max-width: 768px) {
+    .about {
+        width: 100%;
+        margin: 0;
+        height: 1200px;
+    }
+    .me-two {
+        position: relative;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 650px) {
+
+}
+@media screen and (max-width: 570px) {
+
+}
+
+@media screen and (max-width: 480px) {
+    .me-two {
+        position: relative;
+        margin-left: 100px;
+        margin-bottom: 10px;
+        width: 200px;
+        height: 150px;
+        float: none;
+    }
+    .myphoto {
+        color: black;
+        font-size: 20px;
+}
+}

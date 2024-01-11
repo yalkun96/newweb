@@ -1,0 +1,65 @@
+{% extends 'ynew/main.html' %}
+
+{% block info %}
+        <div>
+            <p class="cont mail">Mail:  {{ contacts.0 }}</p>
+            <p class="cont whatsapp">WhatsApp:  {{ contacts.1 }}</p>
+            <p class="cont phone">Phone:  {{ contacts.2 }}</p>
+        </div>
+
+     <form class="container" method="post">
+        <div class="mainform">
+	        <div class="row">
+			    <h1>contact me</h1>
+	        </div>
+	        <div class="row">
+			    <h4 class="contactme">Please send me your request<br>I will answer in next two days</h4>
+	        </div>
+	        <div class="row input-container">
+                {% csrf_token %}
+			    <div class="col-xs-12">
+                    <div class="styled-input wide">
+                        {% for i in messages %}
+                        <div id="hideafter" class="thanking">
+                            {{ i }}
+                        </div>
+                    {% endfor %}
+
+                    </div>
+                    {% if form.name.errors %}
+                            <div>
+                                <strong>{{ form.name.errors }}</strong>
+                            </div>
+                    {% endif %}
+				    <div class="styled-input wide">
+                        {{ form.name }}
+				    </div>
+			    </div>
+			    <div class="col-md-6 col-sm-12">
+                     {% if form.email.errors %}
+                            <div>
+                                <strong>{{ form.email.errors }}</strong>
+                            </div>
+                     {% endif %}
+				    <div class="styled-input wide">
+					    {{ form.email }}
+				    </div>
+			    </div>
+
+			    <div class="col-xs-12">
+                    {% if form.message.errors %}
+                            <div>
+                                <strong>{{ form.message.errors }}</strong>
+                            </div>
+                    {% endif %}
+				    <div class="styled-input wide">
+                        {{ form.message }}
+				    </div>
+			    </div>
+			    <div class="col-xs-12">
+				    <button type="submit" class="btn-lrg submit-btn">Send Message</button>
+			    </div>
+	        </div>
+        </div>
+    </form>
+{% endblock %}
